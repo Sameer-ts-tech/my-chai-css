@@ -1,5 +1,5 @@
 {
-  "name": "chai-css",
+  "name": "chai-sutta-css",
   "version": "1.0.0",
   "description": "A lightweight, zero-dependency utility-first CSS engine. Build beautiful UIs fast with chai-* utility classes.",
   "main": "chai.js",
@@ -24,10 +24,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sameer/chai-css"
+    "url": "https://github.com/Sameer-ts-tech/my-chai-css"
   },
-  "homepage": "https://github.com/sameer/chai-css#readme",
+  "homepage": "https://github.com/Sameer-ts-tech/my-chai-css#readme",
   "bugs": {
-    "url": "https://github.com/sameer/chai-css/issues"
+    "url": "https://github.com/Sameer-ts-tech/my-chai-css/issues"
   }
 }

@@ -9,19 +9,19 @@ A **lightweight, zero-dependency utility-first CSS engine** that scans your DOM 
 ### npm
 
 ```bash
-npm install chai-css
+npm install chai-sutta-css
 ```
 
 Then in your JS entry file:
 
 ```js
-require('chai-css');
+require('chai-sutta-css');
 ```
 
 ### CDN / Script Tag
 
 ```html
-<script src="https://unpkg.com/chai-css"></script>
+<script src="https://unpkg.com/chai-sutta-css"></script>
 ```
 
 Or include the file directly:
