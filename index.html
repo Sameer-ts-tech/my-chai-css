@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chai CSS ☕ — Lightweight Utility-First CSS Engine</title>
+  <meta name="description" content="A lightweight, zero-dependency utility-first CSS engine. Build beautiful UIs fast with chai-* utility classes.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="navbar-logo">☕ Chai CSS</a>
+      <ul class="navbar-links" id="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#installation">Install</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#reference">Reference</a></li>
+        <li><a href="https://github.com" target="_blank" class="nav-btn">⭐ GitHub</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-badge animate-on-load animate-fade-in-up">
+        ✨ v1.0 — Now Available
+      </div>
+      <h1 class="hero-title animate-on-load animate-fade-in-up delay-100">
+        Build UIs with<br><span class="gradient-text">Chai CSS</span> ☕
+      </h1>
+      <p class="hero-subtitle animate-on-load animate-fade-in-up delay-200">
+        A lightweight, zero-dependency utility-first CSS engine that scans your DOM and applies styles dynamically. No build step. No configuration. Just add classes and go.
+      </p>
+      <div class="hero-actions animate-on-load animate-fade-in-up delay-300">
+        <a href="#installation" class="btn btn-primary">Get Started →</a>
+        <a href="#reference" class="btn btn-secondary">📖 View Docs</a>
+      </div>
+      <div class="hero-install animate-on-load animate-fade-in-up delay-400" onclick="copyToClipboard('npm install chai-css')">
+        <span>$</span>
+        <code>npm install chai-css</code>
+        <span class="copy-icon">📋</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="section section-alt" id="features">
+    <div class="section-inner">
+      <div class="section-label">⚡ Why Chai CSS</div>
+      <h2 class="section-title">Everything you need,<br>nothing you don't.</h2>
+      <p class="section-desc">Chai CSS brings the utility-first approach to vanilla HTML with zero build tools. Just include one script and start building.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🪶</div>
+          <h3>Featherweight</h3>
+          <p>Under 6KB of pure JavaScript. No CSS files to load. No bloated bundles. Just raw performance.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Zero Build Step</h3>
+          <p>No webpack, no PostCSS, no config files. Drop in a script tag and start using utility classes immediately.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <h3>Smart Caching</h3>
+          <p>Styles are computed once and cached. Repeated classes resolve instantly from memory for blazing performance.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔄</div>
+          <h3>Live DOM Observer</h3>
+          <p>MutationObserver watches for DOM changes. Dynamically added elements get styled automatically — perfect for SPAs.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎨</div>
+          <h3>Full Color Palette</h3>
+          <p>20 color families × 11 shades each. From slate-50 to rose-950, every color you need is built in.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📦</div>
+          <h3>npm Ready</h3>
+          <p>Install via npm or include via CDN. Works with any framework — React, Vue, vanilla HTML, anything.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INSTALLATION ===== -->
+  <section class="section" id="installation">
+    <div class="section-inner">
+      <div class="section-label">📦 Getting Started</div>
+      <h2 class="section-title">Install in seconds.</h2>
+      <p class="section-desc">Choose your preferred method — npm, CDN, or a simple script tag.</p>
+      <div class="install-steps">
+        <div class="install-step">
+          <div class="step-number">1</div>
+          <h3>npm / yarn</h3>
+          <p>Install the package from npm:</p>
+          <code class="code-inline">npm install chai-css</code>
+          <br><br>
+          <p>Then import in your JS entry file:</p>
+          <code class="code-inline">require('chai-css');  // or import 'chai-css';</code>
+        </div>
+        <div class="install-step">
+          <div class="step-number">2</div>
+          <h3>CDN / Script Tag</h3>
+          <p>Just add this before your closing &lt;/body&gt; tag:</p>
+          <code class="code-inline">&lt;script src="chai.js"&gt;&lt;/script&gt;</code>
+          <br><br>
+          <p>Or use a CDN (after publishing):</p>
+          <code class="code-inline">&lt;script src="https://unpkg.com/chai-css"&gt;&lt;/script&gt;</code>
+        </div>
+        <div class="install-step">
+          <div class="step-number">3</div>
+          <h3>Start Building</h3>
+          <p>Add <code>chai-</code> prefixed classes to any element:</p>
+          <code class="code-inline">&lt;div class="chai-p-4 chai-bg-blue-500 chai-text-white chai-rounded-lg"&gt;
+  Hello Chai! ☕
+&lt;/div&gt;</code>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== USAGE ===== -->
+  <section class="section section-alt" id="usage">
+    <div class="section-inner">
+      <div class="section-label">🛠️ How It Works</div>
+      <h2 class="section-title">Utility classes, inline magic.</h2>
+      <p class="section-desc">Prefix any supported utility with <code>chai-</code> and the engine applies the corresponding CSS property as an inline style.</p>
+      <div class="code-block-wrapper" style="margin-top:32px;">
+        <div class="code-block-header">
+          <div class="code-block-dots"><span></span><span></span><span></span></div>
+          <span>index.html</span>
+          <button class="copy-btn" onclick="copyToClipboard(this.closest('.code-block-wrapper').querySelector('pre').textContent)">📋 Copy</button>
+        </div>
+        <div class="code-block-body"><pre><span class="token-comment">&lt;!-- A styled card using only chai-* classes --&gt;</span>
+<span class="token-tag">&lt;div</span> <span class="token-attr">class</span>=<span class="token-string">"chai-flex chai-flex-col chai-gap-4 chai-p-8 chai-bg-slate-800 chai-rounded-xl chai-shadow-lg"</span><span class="token-tag">&gt;</span>
+
+  <span class="token-tag">&lt;h2</span> <span class="token-attr">class</span>=<span class="token-string">"chai-text-2xl chai-font-bold chai-text-white"</span><span class="token-tag">&gt;</span>
+    Welcome to Chai ☕
+  <span class="token-tag">&lt;/h2&gt;</span>
+
+  <span class="token-tag">&lt;p</span> <span class="token-attr">class</span>=<span class="token-string">"chai-text-base chai-text-slate-400 chai-leading-relaxed"</span><span class="token-tag">&gt;</span>
+    Style your HTML with utility classes.
+    No CSS files needed!
+  <span class="token-tag">&lt;/p&gt;</span>
+
+  <span class="token-tag">&lt;button</span> <span class="token-attr">class</span>=<span class="token-string">"chai-p-3 chai-bg-violet-500 chai-text-white chai-rounded-md chai-font-semibold chai-cursor-pointer"</span><span class="token-tag">&gt;</span>
+    Get Started →
+  <span class="token-tag">&lt;/button&gt;</span>
+
+<span class="token-tag">&lt;/div&gt;</span></pre></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIVE DEMO ===== -->
+  <section class="section" id="demo">
+    <div class="section-inner">
+      <div class="section-label">🎨 Live Demo</div>
+      <h2 class="section-title">See it in action.</h2>
+      <p class="section-desc">Every component below is styled entirely with Chai CSS utility classes.</p>
+      <div class="demo-grid">
+
+        <!-- Demo Card 1 -->
+        <div class="demo-card">
+          <div class="demo-card-preview" style="background:linear-gradient(135deg,#1e293b,#0f172a)">
+            <div class="chai-flex chai-flex-col chai-gap-3 chai-p-6 chai-bg-slate-800 chai-rounded-xl chai-shadow-lg" style="width:100%">
+              <div class="chai-text-xs chai-uppercase chai-tracking-widest chai-text-violet-400 chai-font-semibold">Featured</div>
+              <div class="chai-text-xl chai-font-bold chai-text-white">Gradient Card</div>
+              <div class="chai-text-sm chai-text-slate-400">Built with spacing, color, and typography utilities.</div>
+            </div>
+          </div>
+          <div class="demo-card-code">chai-flex chai-flex-col chai-gap-3 chai-p-6
+chai-bg-slate-800 chai-rounded-xl chai-shadow-lg</div>
+        </div>
+
+        <!-- Demo Card 2 -->
+        <div class="demo-card">
+          <div class="demo-card-preview" style="background:linear-gradient(135deg,#1a1a24,#14141e)">
+            <div class="chai-flex chai-gap-3 chai-items-center">
+              <div class="chai-w-48 chai-h-48 chai-rounded-full chai-bg-emerald-500 chai-flex chai-items-center chai-justify-center chai-text-white chai-font-bold chai-text-xl">S</div>
+              <div class="chai-flex chai-flex-col chai-gap-1">
+                <div class="chai-text-base chai-font-semibold chai-text-white">Sameer</div>
+                <div class="chai-text-sm chai-text-emerald-400">Online</div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-card-code">chai-flex chai-gap-3 chai-items-center
+chai-w-48 chai-h-48 chai-rounded-full chai-bg-emerald-500</div>
+        </div>
+
+        <!-- Demo Card 3 -->
+        <div class="demo-card">
+          <div class="demo-card-preview" style="background:linear-gradient(135deg,#1e1b2e,#14141e)">
+            <div class="chai-flex chai-gap-2 chai-flex-wrap">
+              <span class="chai-px-3 chai-py-1 chai-bg-violet-500 chai-text-white chai-rounded-full chai-text-xs chai-font-medium">CSS</span>
+              <span class="chai-px-3 chai-py-1 chai-bg-blue-500 chai-text-white chai-rounded-full chai-text-xs chai-font-medium">Utility</span>
+              <span class="chai-px-3 chai-py-1 chai-bg-emerald-500 chai-text-white chai-rounded-full chai-text-xs chai-font-medium">Lightweight</span>
+              <span class="chai-px-3 chai-py-1 chai-bg-amber-500 chai-text-white chai-rounded-full chai-text-xs chai-font-medium">Fast</span>
+              <span class="chai-px-3 chai-py-1 chai-bg-pink-500 chai-text-white chai-rounded-full chai-text-xs chai-font-medium">Modern</span>
+            </div>
+          </div>
+          <div class="demo-card-code">chai-px-3 chai-py-1 chai-bg-violet-500
+chai-text-white chai-rounded-full chai-text-xs</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CLASS REFERENCE ===== -->
+  <section class="section section-alt" id="reference">
+    <div class="section-inner">
+      <div class="section-label">📖 Reference</div>
+      <h2 class="section-title">All Available Classes</h2>
+      <p class="section-desc">Every utility class prefixed with <code>chai-</code>. Use the search to filter.</p>
+
+      <div class="ref-search">
+        <input type="text" id="refSearchInput" placeholder="Search classes... e.g. flex, bg-blue, rounded" oninput="filterReference()">
+      </div>
+
+      <div id="refContent">
+
+        <!-- Display -->
+        <div class="ref-category" data-category="display">
+          <h3>📐 Display</h3>
+          <div class="ref-table-wrapper"><table class="ref-table">
+            <thead><tr><th>Class</th><th>CSS Property</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td><span class="class-name">chai-flex</span></td><td class="css-prop">display</td><td>flex</td></tr>
+              <tr><td><span class="class-name">chai-grid</span></td><td class="css-prop">display</td><td>grid</td></tr>
+              <tr><td><span class="class-name">chai-block</span></td><td class="css-prop">display</td><td>block</td></tr>
+              <tr><td><span class="class-name">chai-inline-block</span></td><td class="css-prop">display</td><td>inline-block</td></tr>
+              <tr><td><span class="class-name">chai-inline</span></td><td class="css-prop">display</td><td>inline</td></tr>
+              <tr><td><span class="class-name">chai-inline-flex</span></td><td class="css-prop">display</td><td>inline-flex</td></tr>
+              <tr><td><span class="class-name">chai-hidden</span></td><td class="css-prop">display</td><td>none</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <!-- Flexbox -->
+        <div class="ref-category" data-category="flexbox">
+          <h3>📏 Flexbox</h3>
+          <div class="ref-table-wrapper"><table class="ref-table">
+            <thead><tr><th>Class</th><th>CSS Property</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td><span class="class-name">chai-flex-row</span></td><td class="css-prop">flex-direction</td><td>row</td></tr>
+              <tr><td><span class="class-name">chai-flex-col</span></td><td class="css-prop">flex-direction</td><td>column</td></tr>
+              <tr><td><span class="class-name">chai-flex-wrap</span></td><td class="css-prop">flex-wrap</td><td>wrap</td></tr>
+              <tr><td><span class="class-name">chai-flex-1</span></td><td class="css-prop">flex</td><td>1 1 0%</td></tr>
+              <tr><td><span class="class-name">chai-flex-none</span></td><td class="css-prop">flex</td><td>none</td></tr>
+              <tr><td><span class="class-name">chai-justify-center</span></td><td class="css-prop">justify-content</td><td>center</td></tr>
+              <tr><td><span class="class-name">chai-justify-between</span></td><td class="css-prop">justify-content</td><td>space-between</td></tr>
+              <tr><td><span class="class-name">chai-justify-around</span></td><td class="css-prop">justify-content</td><td>space-around</td></tr>
+              <tr><td><span class="class-name">chai-justify-evenly</span></td><td class="css-prop">justify-content</td><td>space-evenly</td></tr>
+              <tr><td><span class="class-name">chai-items-center</span></td><td class="css-prop">align-items</td><td>center</td></tr>
+              <tr><td><span class="class-name">chai-items-start</span></td><td class="css-prop">align-items</td><td>flex-start</td></tr>
+              <tr><td><span class="class-name">chai-items-end</span></td><td class="css-prop">align-items</td><td>flex-end</td></tr>
+              <tr><td><span class="class-name">chai-gap-{n}</span></td><td class="css-prop">gap</td><td>n × 4px</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <!-- Grid -->
+        <div class="ref-category" data-category="grid">
+          <h3>🔲 Grid</h3>
+          <div class="ref-table-wrapper"><table class="ref-table">
+            <thead><tr><th>Class</th><th>CSS Property</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td><span class="class-name">chai-grid-cols-{n}</span></td><td class="css-prop">grid-template-columns</td><td>repeat(n, minmax(0, 1fr))</td></tr>
+              <tr><td><span class="class-name">chai-col-span-{n}</span></td><td class="css-prop">grid-column</td><td>span n / span n</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <!-- Spacing -->
+        <div class="ref-category" data-category="spacing">
+          <h3>📐 Spacing</h3>
+          <div class="ref-table-wrapper"><table class="ref-table">
+            <thead><tr><th>Class</th><th>CSS Property</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td><span class="class-name">chai-p-{n}</span></td><td class="css-prop">padding</td><td>n × 4px (0–96)</td></tr>
+              <tr><td><span class="class-name">chai-px-{n}</span></td><td class="css-prop">padding-left/right</td><td>n × 4px</td></tr>
+              <tr><td><span class="class-name">chai-py-{n}</span></td><td class="css-prop">padding-top/bottom</td><td>n × 4px</td></tr>
+              <tr><td><span class="class-name">chai-pt/pr/pb/pl-{n}</span></td><td class="css-prop">padding-*</td><td>n × 4px</td></tr>
+              <tr><td><span class="class-name">chai-m-{n}</span></td><td class="css-prop">margin</td><td>n × 4px</td></tr>
+              <tr><td><span class="class-name">chai-mx-{n}</span></td><td class="css-prop">margin-left/right</td><td>n × 4px</td></tr>
+              <tr><td><span class="class-name">chai-my-{n}</span></td><td class="css-prop">margin-top/bottom</td><td>n × 4px</td></tr>
+              <tr><td><span class="class-name">chai-mx-auto</span></td><td class="css-prop">margin-left/right</td><td>auto</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <!-- Typography -->
+        <div class="ref-category" data-category="typography">
+          <h3>🔤 Typography</h3>
+          <div class="ref-table-wrapper"><table class="ref-table">
+            <thead><tr><th>Class</th><th>CSS Property</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td><span class="class-name">chai-text-xs/sm/base/lg/xl</span></td><td class="css-prop">font-size</td><td>12–20px</td></tr>
+              <tr><td><span class="class-name">chai-text-2xl … 9xl</span></td><td class="css-prop">font-size</td><td>24–128px</td></tr>
+              <tr><td><span class="class-name">chai-text-{n}</span></td><td class="css-prop">font-size</td><td>n px</td></tr>
+              <tr><td><span class="class-name">chai-font-thin … font-black</span></td><td class="css-prop">font-weight</td><td>100–900</td></tr>
+              <tr><td><span class="class-name">chai-italic</span></td><td class="css-prop">font-style</td><td>italic</td></tr>
+              <tr><td><span class="class-name">chai-uppercase</span></td><td class="css-prop">text-transform</td><td>uppercase</td></tr>
+              <tr><td><span class="class-name">chai-lowercase</span></td><td class="css-prop">text-transform</td><td>lowercase</td></tr>
+              <tr><td><span class="class-name">chai-capitalize</span></td><td class="css-prop">text-transform</td><td>capitalize</td></tr>
+              <tr><td><span class="class-name">chai-underline</span></td><td class="css-prop">text-decoration</td><td>underline</td></tr>
+              <tr><td><span class="class-name">chai-line-through</span></td><td class="css-prop">text-decoration</td><td>line-through</td></tr>
+              <tr><td><span class="class-name">chai-text-center/left/right</span></td><td class="css-prop">text-align</td><td>center / left / right</td></tr>
+              <tr><td><span class="class-name">chai-leading-tight … loose</span></td><td class="css-prop">line-height</td><td>1.25–2</td></tr>
+              <tr><td><span class="class-name">chai-tracking-tight … widest</span></td><td class="css-prop">letter-spacing</td><td>-0.05em–0.1em</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <!-- Colors -->
+        <div class="ref-category" data-category="colors">
+          <h3>🎨 Colors</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;margin-bottom:16px;">
+            Use <code style="color:var(--accent-primary)">chai-bg-{color}-{shade}</code> or <code style="color:var(--accent-primary)">chai-text-{color}-{shade}</code>. Shades: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950.
+          </p>
+          <div class="color-palette-grid" id="colorPalette"></div>
+        </div>
+
+        <!-- Sizing -->
+        <div class="ref-category" data-category="sizing">
+          <h3>📏 Width & Height</h3>
+          <div class="ref-table-wrapper"><table class="ref-table">
+            <thead><tr><th>Class</th><th>CSS Property</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td><span class="class-name">chai-w-{n}</span></td><td class="css-prop">width</td><td>n px</td></tr>
+              <tr><td><span class="class-name">chai-w-full</span></td><td class="css-prop">width</td><td>100%</td></tr>
+              <tr><td><span class="class-name">chai-w-screen</span></td><td class="css-prop">width</td><td>100vw</td></tr>
+              <tr><td><span class="class-name">chai-w-auto</span></td><td class="css-prop">width</td><td>auto</td></tr>
+              <tr><td><span class="class-name">chai-h-{n}</span></td><td class="css-prop">height</td><td>n px</td></tr>
+              <tr><td><span class="class-name">chai-h-full / h-screen</span></td><td class="css-prop">height</td><td>100% / 100vh</td></tr>
+              <tr><td><span class="class-name">chai-max-w-{size}</span></td><td class="css-prop">max-width</td><td>xs–7xl or px</td></tr>
+              <tr><td><span class="class-name">chai-min-h-screen</span></td><td class="css-prop">min-height</td><td>100vh</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <!-- Borders -->
+        <div class="ref-category" data-category="borders">
+          <h3>🔲 Borders & Radius</h3>
+          <div class="ref-table-wrapper"><table class="ref-table">
+            <thead><tr><th>Class</th><th>CSS Property</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td><span class="class-name">chai-border</span></td><td class="css-prop">border</td><td>1px solid currentColor</td></tr>
+              <tr><td><span class="class-name">chai-border-{n}</span></td><td class="css-prop">border</td><td>n px solid</td></tr>
+              <tr><td><span class="class-name">chai-border-t/r/b/l</span></td><td class="css-prop">border-*</td><td>1px solid currentColor</td></tr>
+              <tr><td><span class="class-name">chai-border-{color}</span></td><td class="css-prop">border-color</td><td>color value</td></tr>
+              <tr><td><span class="class-name">chai-rounded</span></td><td class="css-prop">border-radius</td><td>6px</td></tr>
+              <tr><td><span class="class-name">chai-rounded-sm/md/lg/xl/2xl</span></td><td class="css-prop">border-radius</td><td>2–16px</td></tr>
+              <tr><td><span class="class-name">chai-rounded-full</span></td><td class="css-prop">border-radius</td><td>9999px</td></tr>
+              <tr><td><span class="class-name">chai-rounded-none</span></td><td class="css-prop">border-radius</td><td>0px</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <!-- Shadows -->
+        <div class="ref-category" data-category="shadows">
+          <h3>🌑 Shadows</h3>
+          <div class="ref-table-wrapper"><table class="ref-table">
+            <thead><tr><th>Class</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td><span class="class-name">chai-shadow-sm</span></td><td>0 1px 2px …</td></tr>
+              <tr><td><span class="class-name">chai-shadow</span></td><td>0 1px 3px …</td></tr>
+              <tr><td><span class="class-name">chai-shadow-md</span></td><td>0 4px 6px …</td></tr>
+              <tr><td><span class="class-name">chai-shadow-lg</span></td><td>0 10px 15px …</td></tr>
+              <tr><td><span class="class-name">chai-shadow-xl</span></td><td>0 20px 25px …</td></tr>
+              <tr><td><span class="class-name">chai-shadow-2xl</span></td><td>0 25px 50px …</td></tr>
+              <tr><td><span class="class-name">chai-shadow-none</span></td><td>none</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+        <!-- Position, Overflow, Opacity, Cursor, Transitions, Misc -->
+        <div class="ref-category" data-category="layout">
+          <h3>📍 Position, Overflow & More</h3>
+          <div class="ref-table-wrapper"><table class="ref-table">
+            <thead><tr><th>Class</th><th>CSS Property</th><th>Value</th></tr></thead>
+            <tbody>
+              <tr><td><span class="class-name">chai-relative / absolute / fixed / sticky</span></td><td class="css-prop">position</td><td>respective value</td></tr>
+              <tr><td><span class="class-name">chai-top/right/bottom/left-{n}</span></td><td class="css-prop">top/right/bottom/left</td><td>n px</td></tr>
+              <tr><td><span class="class-name">chai-z-{n}</span></td><td class="css-prop">z-index</td><td>n</td></tr>
+              <tr><td><span class="class-name">chai-overflow-hidden / auto / scroll</span></td><td class="css-prop">overflow</td><td>respective value</td></tr>
+              <tr><td><span class="class-name">chai-opacity-{0–100}</span></td><td class="css-prop">opacity</td><td>0–1</td></tr>
+              <tr><td><span class="class-name">chai-cursor-pointer</span></td><td class="css-prop">cursor</td><td>pointer</td></tr>
+              <tr><td><span class="class-name">chai-cursor-not-allowed</span></td><td class="css-prop">cursor</td><td>not-allowed</td></tr>
+              <tr><td><span class="class-name">chai-transition</span></td><td class="css-prop">transition</td><td>all 150ms ease</td></tr>
+              <tr><td><span class="class-name">chai-duration-{n}</span></td><td class="css-prop">transition-duration</td><td>n ms</td></tr>
+              <tr><td><span class="class-name">chai-scale-{n}</span></td><td class="css-prop">transform</td><td>scale(n/100)</td></tr>
+              <tr><td><span class="class-name">chai-rotate-{n}</span></td><td class="css-prop">transform</td><td>rotate(n deg)</td></tr>
+              <tr><td><span class="class-name">chai-select-none</span></td><td class="css-prop">user-select</td><td>none</td></tr>
+              <tr><td><span class="class-name">chai-truncate</span></td><td class="css-prop">overflow + text-overflow</td><td>ellipsis</td></tr>
+              <tr><td><span class="class-name">chai-whitespace-nowrap</span></td><td class="css-prop">white-space</td><td>nowrap</td></tr>
+              <tr><td><span class="class-name">chai-list-none</span></td><td class="css-prop">list-style</td><td>none</td></tr>
+              <tr><td><span class="class-name">chai-object-cover / contain</span></td><td class="css-prop">object-fit</td><td>cover / contain</td></tr>
+            </tbody>
+          </table></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">☕ Chai CSS</div>
+      <p>A lightweight utility-first CSS engine. Built with ❤️ and lots of ☕</p>
+      <ul class="footer-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#reference">Docs</a></li>
+        <li><a href="https://github.com" target="_blank">GitHub</a></li>
+        <li><a href="https://npmjs.com" target="_blank">npm</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="chai.js"></script>
+  <script>
+    // Mobile nav toggle
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('active');
+    });
+
+    // Copy to clipboard
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text.trim()).then(() => {
+        const el = document.createElement('div');
+        el.textContent = '✓ Copied!';
+        el.style.cssText = 'position:fixed;top:20px;right:20px;background:#22c55e;color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;z-index:9999;animation:fadeIn .3s ease';
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 1500);
+      });
+    }
+
+    // Animate on load
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.animate-on-load').forEach(el => {
+        el.style.opacity = '0';
+        const delay = parseFloat(getComputedStyle(el).animationDelay) * 1000 || 0;
+        setTimeout(() => { el.style.opacity = ''; }, delay + 50);
+      });
+    });
+
+    // Search / filter reference
+    function filterReference() {
+      const q = document.getElementById('refSearchInput').value.toLowerCase();
+      document.querySelectorAll('.ref-category').forEach(cat => {
+        const rows = cat.querySelectorAll('tbody tr');
+        let visible = 0;
+        rows.forEach(row => {
+          const text = row.textContent.toLowerCase();
+          const show = !q || text.includes(q);
+          row.style.display = show ? '' : 'none';
+          if (show) visible++;
+        });
+        // also check category title
+        const title = cat.querySelector('h3').textContent.toLowerCase();
+        cat.style.display = (visible > 0 || title.includes(q) || !q) ? '' : 'none';
+      });
+    }
+
+    // Build color palette swatches
+    (function buildColorPalette() {
+      const colors = {
+        slate: {50:"#f8fafc",200:"#e2e8f0",400:"#94a3b8",500:"#64748b",600:"#475569",800:"#1e293b",950:"#020617"},
+        red: {50:"#fef2f2",200:"#fecaca",400:"#f87171",500:"#ef4444",600:"#dc2626",800:"#991b1b",950:"#450a0a"},
+        orange: {50:"#fff7ed",200:"#fed7aa",400:"#fb923c",500:"#f97316",600:"#ea580c",800:"#9a3412",950:"#431407"},
+        amber: {50:"#fffbeb",200:"#fde68a",400:"#fbbf24",500:"#f59e0b",600:"#d97706",800:"#92400e",950:"#451a03"},
+        green: {50:"#f0fdf4",200:"#bbf7d0",400:"#4ade80",500:"#22c55e",600:"#16a34a",800:"#166534",950:"#052e16"},
+        emerald: {50:"#ecfdf5",200:"#a7f3d0",400:"#34d399",500:"#10b981",600:"#059669",800:"#065f46",950:"#022c22"},
+        cyan: {50:"#ecfeff",200:"#a5f3fc",400:"#22d3ee",500:"#06b6d4",600:"#0891b2",800:"#155e75",950:"#083344"},
+        blue: {50:"#eff6ff",200:"#bfdbfe",400:"#60a5fa",500:"#3b82f6",600:"#2563eb",800:"#1e40af",950:"#172554"},
+        indigo: {50:"#eef2ff",200:"#c7d2fe",400:"#818cf8",500:"#6366f1",600:"#4f46e5",800:"#3730a3",950:"#1e1b4b"},
+        violet: {50:"#f5f3ff",200:"#ddd6fe",400:"#a78bfa",500:"#8b5cf6",600:"#7c3aed",800:"#5b21b6",950:"#2e1065"},
+        purple: {50:"#faf5ff",200:"#e9d5ff",400:"#c084fc",500:"#a855f7",600:"#9333ea",800:"#6b21a8",950:"#3b0764"},
+        pink: {50:"#fdf2f8",200:"#fbcfe8",400:"#f472b6",500:"#ec4899",600:"#db2777",800:"#9d174d",950:"#500724"},
+        rose: {50:"#fff1f2",200:"#fecdd3",400:"#fb7185",500:"#f43f5e",600:"#e11d48",800:"#9f1239",950:"#4c0519"},
+      };
+      const grid = document.getElementById('colorPalette');
+      for (const [name, shades] of Object.entries(colors)) {
+        const group = document.createElement('div');
+        group.className = 'color-group';
+        group.innerHTML = `<h4>${name}</h4><div class="color-swatches">${
+          Object.entries(shades).map(([s, hex]) =>
+            `<div class="color-swatch" style="background:${hex}" title="chai-bg-${name}-${s}: ${hex}"></div>`
+          ).join('')
+        }</div>`;
+        grid.appendChild(group);
+      }
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "chai-css",
+  "version": "1.0.0",
+  "description": "A lightweight, zero-dependency utility-first CSS engine. Build beautiful UIs fast with chai-* utility classes.",
+  "main": "chai.js",
+  "files": [
+    "chai.js"
+  ],
+  "scripts": {
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": [
+    "css",
+    "utility",
+    "utility-first",
+    "lightweight",
+    "tailwind-alternative",
+    "inline-styles",
+    "zero-config",
+    "frontend",
+    "chai-css"
+  ],
+  "author": "Sameer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sameer/chai-css"
+  },
+  "homepage": "https://github.com/sameer/chai-css#readme",
+  "bugs": {
+    "url": "https://github.com/sameer/chai-css/issues"
+  }
+}
